@@ -1,0 +1,63 @@
+<div>
+<!--   <h3>${nls.widgetTitle}</h3>
+  <p>${nls.description}</p>
+  <p>Service URL: ${config.serviceUrl}</p> -->
+ 	<div class="contentsHz">
+ 		<p>${nls.abstract}</p><a href="UserGuide.pdf" download>ver manual</a>
+ 	</div>
+ 	<div>
+ 		<select class="menuHz" id="queryentity">
+ 			<option selected value="1">${nls.hazard}</option>
+ 			<option value="2">${nls.floods}</option>
+ 		</select>
+ 	</div>
+ 	<div class="tabHz">
+		<button class="method active" id="drawbtnHz" data-dojo-attach-event="onClick: _onchangetab">${nls.draw}</button>
+		<button class="method" id="featbtnHz" data-dojo-attach-event="onClick: _onchangetab">${nls.feature}</button>
+	</div>
+	<div div id="drawHz" class="tabcontentHz active">
+		<button class="drawHz" id="point" title="${nls.point}" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick: _activateToolHz"></button>
+		<button class="drawHz" id="polyline" title="${nls.polyline}" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick: _activateToolHz"></button>
+		<button class="drawHz" id="polygon" title="${nls.polygon}" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick: _activateToolHz"></button>
+		<button class="drawHz" id="erase" title="${nls.erase}" data-dojo-type="dijit/form/Button" data-dojo-attach-event="onClick: _activateToolHz"></button>
+	</div>
+	<form enctype="multipart/form-data" method="post" id="uploadFormHz">
+		<div id="featureHz" class="tabcontentHz uploadHz">
+			<input type="button" class="uploadButtonHz" value="Buscar"/>
+			<input type="file" multiple="false" data-dojo-attach-point="fileInputHz" name="file" accept=".zip" id="fileUploadHz"
+			data-dojo-attach-event="onChange: _onUploadHz"//>
+			<span class="fileNameHz" id="estadoHz">${nls.lblSelectFile}</span>
+		</div>
+	</form>
+	<div class="summary" id="summaryContent"></div>
+	<div class="status" id="loaderHz"></div>
+	<div class="status" id="errorHz">ERROR!</div>
+	<div class="status" id="formatedError"></div>
+	<div class="status" id="downloadHz">
+		<a href="" id="downloadzip">DESCARGAR</a>
+		<span id="extentgeometry">EXTENT</span>
+		<select id="filtro">
+			<option value="MuyAlto">Muy Alto</option>
+			<option value="Alto">Alto</option>
+			<option value="Medio">Medio</option>
+			<option value="Bajo">Bajo</option>
+			<option value="MuyBajo">Muy bajo</option>
+			<option selected value="All">Mostrar todo</option>
+		</select>
+	</div>
+	<div class="tableContainerHz" id="tbHz">
+		<table class="tableHz">
+		  <thead>
+		    <tr>
+		      <th>ID</th>
+		      <th>PELIGRO</th>
+		      <th>PORCENTAJE</th>
+		      <th>LEYENDA</th>
+		    </tr>
+		  </thead>
+		  <tbody class="tableRowHz" id="containerRowsHz">
+		  </tbody>
+		</table>
+	</div>
+</form>
+</div>
